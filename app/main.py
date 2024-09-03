@@ -6,17 +6,17 @@ from .dashboard import create_dashboard
 from .ats_matcher.matcher import match_resume_to_jd
 
 def create_app():
-    app = Flask(__name__)
+    flask_app = Flask(__name__)
 
     # Initialize Dash app
-    dash_app = Dash(__name__, server=app, url_base_pathname='/dashboard/')
+    dash_app = Dash(__name__, server=flask_app, url_base_pathname='/dashboard/')
     create_dashboard(dash_app)
 
-    @app.route('/')
+    @flask_app.route('/')
     def index():
         return render_template('index.html')
 
-    @app.route('/api/match', methods=['POST'])
+    @flask_app.route('/api/match', methods=['POST'])
     def match_resume():
         data = request.json
         jd = data.get('job_description')
@@ -28,7 +28,7 @@ def create_app():
         match_result = match_resume_to_jd(jd, resume)
         return jsonify(match_result)
 
-    return app
+    return flask_app
 
 app = create_app()
 
