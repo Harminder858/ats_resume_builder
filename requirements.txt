@@ -1,6 +1,10 @@
 flask
 dash
-spacy
-scikit-learn
-requests
 plotly
+pandas
+scikit-learn
+numpy
+transformers
+torch
+spacy
+gunicorn
