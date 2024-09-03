@@ -1,2 +1,3 @@
-# ats_resume_builder
-app to build ats friendly resume
+# ATS Resume Matcher
+
+This project is an Applicant Tracking System (ATS) Resume Matcher.

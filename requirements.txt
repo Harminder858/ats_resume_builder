@@ -1,0 +1,6 @@
+flask
+dash
+spacy
+scikit-learn
+requests
+plotly
