@@ -27,7 +27,7 @@ def match_resume():
     match_result = match_resume_to_jd(jd, resume)
     return jsonify(match_result)
 
-server = app.server
+# We don't need to define server = app.server
 
 if __name__ == '__main__':
     app.run(debug=True)
